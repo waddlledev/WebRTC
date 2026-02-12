@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 260px;
+      padding: 24px;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .header h1 {
+      font-size: 16px;
+      font-weight: 500;
+      color: #a855f7;
+      letter-spacing: 0.5px;
+    }
+    
+    .status-box {
+      background: #141414;
+      border: 1px solid #262626;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .status-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    
+    .protected {
+      background: #a855f7;
+      box-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+    }
+    
+    .exposed {
+      background: #525252;
+    }
+    
+    .status-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: #a855f7;
+    }
+    
+    .status-text.exposed {
+      color: #737373;
+    }
+    
+    .info {
+      font-size: 11px;
+      color: #525252;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px 16px;
+      border: 1px solid #262626;
+      border-radius: 6px;
+      background: #141414;
+      color: #a855f7;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    button:hover {
+      background: #1a1a1a;
+      border-color: #a855f7;
+    }
+    
+    button:active {
+      transform: scale(0.98);
+    }
+    
+    .divider {
+      height: 1px;
+      background: #1a1a1a;
+      margin: 16px 0;
+    }
+    
+    .features {
+      font-size: 11px;
+      color: #525252;
+    }
+    
+    .feature {
+      margin: 6px 0;
+      padding-left: 12px;
+      position: relative;
+    }
+    
+    .feature::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #a855f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>WebRTC Guard</h1>
+  </div>
+  
+  <div class="status-box">
+    <span id="statusIndicator" class="status-indicator"></span>
+    <span id="statusText" class="status-text">Checking...</span>
+    <div class="info" id="infoText">Checking protection status...</div>
+  </div>
+  
+  <button id="toggleBtn">Toggle Protection</button>
+  
+  <div class="divider"></div>
+  
+  <div class="features">
+    <div class="feature">Blocks WebRTC IP leaks</div>
+    <div class="feature">Prevents real IP exposure</div>
+    <div class="feature">Works with VPNs</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

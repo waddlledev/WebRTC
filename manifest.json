@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "WebRTC Privacy Guard",
+  "version": "1.0",
+  "description": "Blocks WebRTC IP leaks to protect your real IP address | Thanks waddle",
+  "permissions": [
+    "privacy",
+    "storage",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon-48.png",
+      "96": "icons/icon-96.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  }
+}
